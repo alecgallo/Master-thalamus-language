@@ -1,2 +1,2 @@
 # Master-thalamus-language
-# Authors: Alec Gallo and Amaia Carrión Castillo (acarrion@bcbl.eu).
+# Authors: Alec Gallo (alecgallo98@gmail.com) and Amaia Carrión Castillo (acarrion@bcbl.eu).
