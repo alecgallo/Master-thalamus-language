@@ -65,10 +65,13 @@ colnames(data) <- make.names(colnames(data), unique = TRUE)
 data <- data %>%
   mutate(Left.totalMD=rowSums(select(., contains("Left.MD"))),
          Right.totalMD=rowSums(select(., contains("Right.MD"))),
-         Left.totalPul=rowSums(select(., contains("Left.Pu"))),
-         Right.totalPul=rowSums(select(., contains("Right.Pu")))
+         #Left.totalPul=rowSums(select(., contains("Left.Pu"))),
+         #Right.totalPul=rowSums(select(., contains("Right.Pu")))
+         Left.totalPul = rowSums(select(., contains(c("Left.PuI", "Left.PuA", "Left.PuL", "Left.PuM")))),
+         Right.totalPul = rowSums(select(., contains(c("Right.PuI", "Right.PuA", "Right.PuL", "Right.PuM"))))
   )
-
+  
+  
 # define colnames for nuclei
 thal_cols<-colnames(thal)[grep("subject|session|timepoint",colnames(thal),invert=TRUE)] %>% make.names()
 
