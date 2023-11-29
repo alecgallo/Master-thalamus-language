@@ -24,7 +24,7 @@ library(ggpubr)
 #--------------------------------------
 # source general functions
 # source("G:/Amepa/ABCDA/phenotypes/scripts/phenotypes/imaging/AlecGallo/clean/general_functions.R")
-source("D:/BCBL/Thalamus/Output/general_functions.R") 
+source("D:/BCBL/Thalamus/Output/4.0_general_functions.R") 
 #--------------------------------------
 # define directories and create if needed
 # setwd("G:/Amepa/ABCDA/phenotypes/data/working_data/imaging/fs_output/")
@@ -101,7 +101,7 @@ for (vol in c(thal_cols)) {
   
   plot_name<-paste("dist",vol,"histogram.png",sep="_")
   
-  if (!file.exists(  paste0("figures/histograms/rawnuclei/", plot_name) ) ){ 
+  #if (!file.exists(  paste0("figures/histograms/rawnuclei/", plot_name) ) ){ 
   tmp<-subset(descriptive_df,measure==vol)
   p <- ggplot(data) + 
     geom_histogram(aes_string(vol,color="timepoint",fill="timepoint")) +
@@ -133,6 +133,6 @@ for (vol in c(thal_cols)) {
   rm(p)
   }
   rm(plot_name)
-}
+#} undo it if you use the if statement above
 #-------------------------------------------------
 
